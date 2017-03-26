@@ -58,7 +58,7 @@
     }
   },
   "variables": {
-    "apiVersion": "2017-03-24",
+    "apiVersion": "2016-04-30-preview",
     "openedxVersion": "open-release/ficus",
     "scriptDownloadUri": "#",
     "installScript": "install-openedx.sh",
@@ -66,7 +66,7 @@
     "vmName": "jumpbox2",
     "osImagePublisher": "Canonical",
     "osImageOffer": "UbuntuServer",
-    "osImageSKU" : "16.04.1-LTS",
+    "osImageSKU" : "16.04.0-LTS",
     "publicIPAddressName": "myPublicIP",
     "publicIPAddressType": "Dynamic",
     "OSDiskName": "osdisk",
