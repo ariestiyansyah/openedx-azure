@@ -63,7 +63,7 @@
     "scriptDownloadUri": "#",
     "installScript": "install-openedx.sh",
     "installCommand": "[concat('bash -c ''nohup ./', variables('installScript'), ' ', variables('openedxVersion'), ' </dev/null &>/var/log/azure/openedx-install.log &''')]",
-    "vmName": "jumpbox2",
+    "vmName": "openedx",
     "osImagePublisher": "Canonical",
     "osImageOffer": "UbuntuServer",
     "osImageSKU" : "16.04.0-LTS",
