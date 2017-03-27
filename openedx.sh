@@ -1,3 +1,6 @@
+#!/bin/bash
+
+set -x
 # 1. Set the OPENEDX_RELEASE variable:
 export OPENEDX_RELEASE=open-release/ficus
 # 2. Bootstrap the Ansible installation:
