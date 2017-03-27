@@ -2,7 +2,7 @@
 
 set -x
 # 1. Set the OPENEDX_RELEASE variable:
-export OPENEDX_RELEASE=open-release/ficus
+export OPENEDX_RELEASE=open-release/ficus.1
 # 2. Bootstrap the Ansible installation:
 wget https://raw.githubusercontent.com/edx/configuration/$OPENEDX_RELEASE/util/install/ansible-bootstrap.sh -O - | sudo bash
 # 3. (Optional) If this is a new installation, randomize the passwords:

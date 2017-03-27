@@ -59,11 +59,11 @@
   },
   "variables": {
     "apiVersion": "2017-03-01",
-    "openedxVersion": "open-release/ficus",
-    "scriptDownloadUri": "#",
+    "openedxVersion": "open-release/ficus.1",
+    "scriptDownloadUri": "https://raw.githubusercontent.com/ariestiyansyah/openedx-azure/master/",
     "installScript": "install-openedx.sh",
     "installCommand": "[concat('bash -c ''nohup ./', variables('installScript'), ' ', variables('openedxVersion'), ' </dev/null &>/var/log/azure/openedx-install.log &''')]",
-    "vmName": "openedx",
+    "vmName": "OPENEDX",
     "osImagePublisher": "Canonical",
     "osImageOffer": "UbuntuServer",
     "osImageSKU" : "16.04.0-LTS",
@@ -71,13 +71,13 @@
     "publicIPAddressType": "Dynamic",
     "OSDiskName": "osdisk",
     "nicName": "vmNic",
-    "virtualNetworkName": "VNET",
+    "virtualNetworkName": "OPENEDXNET",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
     "subnetName": "Subnet",
     "addressPrefix": "10.0.0.0/16",
     "subnetPrefix": "10.0.0.0/24",
-    "nsgName": "node-nsg",
+    "nsgName": "openedx-nsg",
     "nsgID": "[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
     "storageAccountType": "Standard_LRS",
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'vhdsa')]",
@@ -269,7 +269,7 @@
         "settings": {
           "fileUris": [
             "[concat(variables('scriptDownloadUri'), variables('installScript'))]",
-            "[concat(variables('scriptDownloadUri'), 'server-vars.yml')]"
+            "[concat(variables('scriptDownloadUri'))]"
           ],
           "commandToExecute": "[variables('installCommand')]"
         }
